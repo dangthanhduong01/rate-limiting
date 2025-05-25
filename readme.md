@@ -1,22 +1,25 @@
 # Rate limiting
 
 # Setup redis:
-bash: 
+
 <code>
     docker compose up
 </code>
 
 # Run:
-bash:
+
 <code>
     go run .
 </code> 
 
+# Build
+
+`go run build`
 
 # Test:
 
 1. Test all
-bash
+
 <code>
     curl -H "X-User-ID: user1" http://localhost:8080/fixed
 
@@ -26,7 +29,7 @@ bash
 </code>
 
 2. Fixed Window
-bash
+
 <code>
     for i in {1..6}; do
     curl -s -o /dev/null -w "%{http_code}\n" -H "X-User-ID: user123" http://localhost:8080/fixed
